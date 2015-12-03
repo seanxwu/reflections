@@ -1,0 +1,10 @@
+Now we are using github, remote depository
+
+:git remote [-v]          #option v = verbose
+:git push origin master   #push master from local to remote as origin
+:git pull                 #pull from remote to local
+
+When would you want to use a remote repository rather than keeping all your work local?
+
+Why might you want to always pull changes manually rather than having Git automatically 
+stay up-to-date with your remote repository?

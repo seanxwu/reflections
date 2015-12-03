@@ -37,16 +37,52 @@ nothing to commit, working directory clean
 What value do you think it offers?
 
 
+$$$$$$$$$$$$$$$$
+
+git commit # will ask about -w whether to create or not, answer NO! 
+it will auto open COMMIT_EDITMSG file
+Once completed COMMIT_EDITMSG following style guide, save. 
+Close Notepad editor, the commit will complete.
+If commit message is empty, the commit will abort automatically.
 
 
 
+: git diff                  #will compare automatically the working directory and staging area
+: git diff --staged         #will compare automatically the staging area and latest commit(1) - or master
+: git diff commit1 commit2  #will compare older (uppder) commit1 with newer (lower) commit2
+: git checkout master       #will get you back the latest commit
+
+How can you use the staging area to make sure you have one commit per logical change?
+
+: git branch                #will show you current branch, with the * on the checked out branch
+: git branch br_name        #will create branch with br_name
+: git checkout br_name      #will checkout br_name - use git branch, it will show you who got *
+: git checkout -b br_name   #this equals above 2 commands in seq.
 
 
+What are some situations when branches would be helpful in keeping your history organized? 
+How would branches help?
 
+: git checkout coins        #this will switch from current branch to a remote branch called coins
+: git log --graph --oneline master coins    #you will need to check out the coins branch using above command before this command
 
+How do the diagrams help you visualize the branch structure?
 
+:git gc     #garbage collection - may delete the unreachable 
+:git merge master coins
+:git show commitId      #shows the diff btw this commitId with its parent (not necessarily the next in git log since they are time based including all branches)
+:git branch -d coins    #once merge is confirmed, you can remove the label of the branch coins
 
+-------------------
+:git checkout branch1 
+:git merge branch2
+:git merge branch1 branch2  # assume you have not checked out anything, this equals above 2 cmds
+--------------------
+:git merge --abort
+--------------------
+What is the result of merging two branches together? Why do we represent it in the diagram the way we do?
 
+What are the pros and cons of Git’s automatic merging vs. always doing merges manually?
 
 
 
